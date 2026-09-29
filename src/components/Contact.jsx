@@ -22,6 +22,8 @@ function Contact() {
 
         <div className="contact-options">
 
+          {/* EMAIL */}
+
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=nexiadigital@gmail.com"
             target="_blank"
@@ -36,7 +38,7 @@ function Contact() {
 
               <div>
                 <span>EMAIL</span>
-                <h3>nexia.digital01@gmail.com</h3>
+                <h3>nexiadigital@gmail.com</h3>
               </div>
 
             </div>
@@ -44,8 +46,11 @@ function Contact() {
             <strong>↗</strong>
           </a>
 
+
+          {/* WHATSAPP */}
+
           <a
-            href="https://wa.me/5511952909693?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Nexia%20Digital%20e%20gostaria%20de%20criar%20um%20site%20para%20meu%20neg%C3%B3cio."
+            href="https://wa.me/5511952909693?text=Ol%C3%A1!%20Vi%20o%20trabalho%20da%20Nexia%20Digital%20e%20gostaria%20de%20criar%20um%20site%20para%20meu%20neg%C3%B3cio."
             target="_blank"
             rel="noopener noreferrer"
             className="contact-card"

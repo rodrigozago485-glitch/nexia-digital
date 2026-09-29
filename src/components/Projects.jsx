@@ -1,89 +1,101 @@
+import { useState } from "react";
 import "./Projects.css";
 
+import print1 from "./images/print1.png";
+import print3 from "./images/print3.png";
+import print4 from "./images/print4.png";
+
 function Projects() {
-  const projects = [
+  const imagens = [
     {
-      title: "Barbearia Zago",
-      category: "Site para negócio",
-      description:
-        "Site desenvolvido para apresentar os serviços da barbearia de forma moderna e facilitar o contato com os clientes.",
+      src: print1,
+      alt: "Página do Restaurante Casa dos Sabores",
     },
     {
-      title: "Restaurante Casa dos Sabores",
-      category: "Site para restaurante",
-      description:
-        "Site desenvolvido para apresentar o restaurante, seu cardápio, informações e os principais destaques do negócio.",
+      src: print3,
+      alt: "Página do Restaurante Casa dos Sabores",
+    },
+    {
+      src: print4,
+      alt: "Página do Restaurante Casa dos Sabores",
     },
   ];
+
+  const [imagemPrincipal, setImagemPrincipal] = useState(0);
+
+  const miniaturas = imagens.filter(
+    (_, index) => index !== imagemPrincipal
+  );
 
   return (
     <section className="projects-section" id="projetos">
       <div className="projects-container">
 
         <div className="projects-heading">
-          <div>
-            <span>PROJETOS</span>
+          <span>PROJETO EM DESTAQUE</span>
 
-            <h2>
-              Alguns trabalhos
-              <strong>que já criamos.</strong>
-            </h2>
-          </div>
+          <h2>
+            Restaurante Casa dos Sabores
+            <strong>Um projeto desenvolvido pela Nexia Digital.</strong>
+          </h2>
 
           <p>
-            Cada projeto é desenvolvido de acordo com a identidade
-            e as necessidades de cada negócio.
+            Um site criado para apresentar o restaurante de forma
+            profissional, moderna e facilitar a conexão com seus clientes.
           </p>
         </div>
 
-        <div className="projects-grid">
+        <div className="restaurant-gallery">
 
-          {projects.map((project, index) => (
-            <article className="project-card" key={project.title}>
+          {/* IMAGEM PRINCIPAL */}
 
-              <div className={`project-preview project-${index + 1}`}>
-                <div className="preview-browser">
+          <div className="gallery-main">
+            <img
+              src={imagens[imagemPrincipal].src}
+              alt={imagens[imagemPrincipal].alt}
+            />
+          </div>
 
-                  <div className="preview-bar">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
+          {/* MINIATURAS */}
 
-                  <div className="preview-content">
-                    <small>{project.category}</small>
+          <div className="gallery-side">
 
-                    <h3>{project.title}</h3>
+            {miniaturas.map((imagem) => {
+              const index = imagens.findIndex(
+                (item) => item.src === imagem.src
+              );
 
-                    <div className="preview-line"></div>
+              return (
+                <button
+                  key={imagem.src}
+                  className="gallery-item"
+                  onClick={() => setImagemPrincipal(index)}
+                >
+                  <img
+                    src={imagem.src}
+                    alt={imagem.alt}
+                  />
+                </button>
+              );
+            })}
 
-                    <div className="preview-blocks">
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                    </div>
-                  </div>
+          </div>
 
-                </div>
-              </div>
+        </div>
 
-              <div className="project-info">
+        {/* INFORMAÇÕES DO PROJETO */}
 
-                <div>
-                  <span>{project.category}</span>
-                  <h3>{project.title}</h3>
-                </div>
+        <div className="project-footer">
 
-                <div className="project-number">
-                  0{index + 1}
-                </div>
+          <div>
+            <span>PROJETO</span>
+            <h3>Restaurante Casa dos Sabores</h3>
+          </div>
 
-                <p>{project.description}</p>
-
-              </div>
-
-            </article>
-          ))}
+          <div>
+            <span>DESENVOLVIDO POR</span>
+            <h3>Nexia Digital</h3>
+          </div>
 
         </div>
 

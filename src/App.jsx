@@ -3,15 +3,16 @@ import "./App.css";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Process from "./components/Process";
 
 function App() {
   return (
     <div className="site">
 
       <header className="navbar">
-        <div className="logo">
+        <a href="#inicio" className="logo">
           NEXIA<span>.</span>
-        </div>
+        </a>
 
         <nav>
           <a href="#inicio">Início</a>
@@ -20,14 +21,19 @@ function App() {
           <a href="#contato">Contato</a>
         </nav>
 
-        <a href="#contato" className="nav-button">
-          Começar projeto
-        </a>
+        <a
+  href="https://wa.me/5511952909693?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Nexia%20Digital%20e%20gostaria%20de%20criar%20um%20site%20para%20meu%20neg%C3%B3cio."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="nav-button"
+>
+  Solicitar projeto
+</a>
+
       </header>
 
       <main>
 
-        {/* PRIMEIRA TELA */}
         <section className="hero" id="inicio">
 
           <div className="hero-content">
@@ -39,19 +45,19 @@ function App() {
 
             <h1>
               Seu negócio merece
-              <strong>um site extraordinário.</strong>
+              <strong>uma presença digital à altura.</strong>
             </h1>
 
             <p>
-              Criamos sites modernos, rápidos e responsivos
-              para empresas e profissionais que querem se
-              destacar no digital.
+              Criamos sites modernos, profissionais e responsivos
+              para empresas e profissionais que querem apresentar
+              seu negócio de forma marcante na internet.
             </p>
 
             <div className="hero-buttons">
 
               <a href="#contato" className="primary-button">
-                Solicitar um projeto
+                Quero criar meu site
                 <span>→</span>
               </a>
 
@@ -64,18 +70,18 @@ function App() {
             <div className="hero-stats">
 
               <div>
-                <strong>100%</strong>
-                <span>Responsivo</span>
+                <strong>RESPONSIVO</strong>
+                <span>Em qualquer tela</span>
               </div>
 
               <div>
-                <strong>MODERNO</strong>
-                <span>Design personalizado</span>
+                <strong>PERSONALIZADO</strong>
+                <span>Design pensado para você</span>
               </div>
 
               <div>
-                <strong>WEB</strong>
-                <span>Experiência digital</span>
+                <strong>PROFISSIONAL</strong>
+                <span>Presença digital</span>
               </div>
 
             </div>
@@ -88,7 +94,7 @@ function App() {
 
             <div className="floating-card card-one">
               <span>DESIGN</span>
-              <strong>+</strong>
+              <strong>CRIATIVO</strong>
             </div>
 
             <div className="website-window">
@@ -112,12 +118,12 @@ function App() {
                 </div>
 
                 <h2>
-                  Build your
-                  <span>digital future.</span>
+                  Seu negócio.
+                  <span>Seu espaço digital.</span>
                 </h2>
 
                 <div className="mini-button">
-                  Explore
+                  CONHECER
                 </div>
 
                 <div className="mini-lines">
@@ -131,27 +137,22 @@ function App() {
             </div>
 
             <div className="floating-card card-two">
-              <span>RESPONSIVE</span>
-              <strong>100%</strong>
+              <span>EXPERIÊNCIA</span>
+              <strong>WEB</strong>
             </div>
 
           </div>
 
         </section>
 
-
-        {/* SERVIÇOS */}
         <Services />
+        
+
+        <Process />
 
 
-        {/* PROJETOS */}
         <Projects />
 
-
-        <Contact />
-
-
-        {/* APRESENTAÇÃO */}
         <section className="intro-section">
 
           <span>DESIGN + TECNOLOGIA</span>
@@ -167,6 +168,8 @@ function App() {
           </p>
 
         </section>
+
+        <Contact />
 
       </main>
 
