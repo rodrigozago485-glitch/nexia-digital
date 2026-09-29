@@ -1,220 +1,306 @@
-.projects-section {
+.services-section {
   padding: 140px 5%;
   background: #07070a;
 }
 
-.projects-container {
+.services-container {
   width: min(1200px, 100%);
   margin: 0 auto;
 }
 
-.projects-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 50px;
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.section-heading {
+  max-width: 800px;
   margin-bottom: 65px;
 }
 
-.projects-heading > div > span {
+.section-heading > span {
   color: #22d3ee;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 4px;
 }
 
-.projects-heading h2 {
+.section-heading h2 {
   margin-top: 18px;
+
+  color: #ffffff;
+
   font-family: "Space Grotesk", sans-serif;
+
   font-size: clamp(40px, 5vw, 65px);
+
   line-height: 1;
+
   letter-spacing: -3px;
 }
 
-.projects-heading h2 strong {
+.section-heading h2 strong {
   display: block;
-  color: #777784;
+
+  margin-top: 10px;
+
+  background: linear-gradient(
+    100deg,
+    #a78bfa,
+    #22d3ee
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
 }
 
-.projects-heading > p {
-  max-width: 370px;
-  color: #858591;
-  font-size: 14px;
+.section-heading p {
+  max-width: 600px;
+
+  margin-top: 28px;
+
+  color: #a5a5b2;
+
+  font-size: 15px;
+
   line-height: 1.8;
 }
 
-.projects-grid {
+/* ========================================
+   SERVIÇOS
+======================================== */
+
+.services-grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+
+  gap: 18px;
 }
 
-.project-card {
+.service-card {
+  position: relative;
+
+  min-height: 280px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   overflow: hidden;
+
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  background: #0e0e14;
-  transition: transform 300ms ease, border-color 300ms ease;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(139, 92, 246, 0.45);
+/* brilho interno */
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -100px;
+  right: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(139, 92, 246, 0.12);
+
+  filter: blur(45px);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
 }
 
-.project-preview {
-  height: 330px;
-  padding: 35px;
+/* hover */
+
+.service-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(139, 92, 246, 0.4);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139, 92, 246, 0.07),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   TOPO DO CARD
+======================================== */
+
+.service-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.service-top > span {
+  color: #8b5cf6;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.service-arrow {
+  width: 40px;
+  height: 40px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
 
-.project-1 {
-  background:
-    radial-gradient(
-      circle at 70% 30%,
-      rgba(139, 92, 246, 0.35),
-      transparent 45%
-    ),
-    #111019;
-}
-
-.project-2 {
-  background:
-    radial-gradient(
-      circle at 30% 30%,
-      rgba(34, 211, 238, 0.25),
-      transparent 45%
-    ),
-    #101417;
-}
-
-.preview-browser {
-  width: 90%;
-  height: 230px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  background: #08080c;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-}
-
-.preview-bar {
-  height: 28px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding-left: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.preview-bar span {
-  width: 5px;
-  height: 5px;
   border-radius: 50%;
-  background: #555560;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #777784;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
 
-.preview-content {
-  padding: 30px;
+.service-card:hover .service-arrow {
+  transform: translate(3px, -3px);
+
+  color: #ffffff;
+
+  border-color: rgba(167, 139, 250, 0.45);
+
+  background: rgba(139, 92, 246, 0.12);
 }
 
-.preview-content small {
-  color: #a78bfa;
-  font-size: 7px;
-  letter-spacing: 2px;
-}
+/* ========================================
+   TEXTOS DOS CARDS
+======================================== */
 
-.preview-content h3 {
-  margin-top: 10px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 25px;
-}
-
-.preview-line {
-  width: 55px;
-  height: 2px;
-  margin-top: 15px;
-  background: #8b5cf6;
-}
-
-.preview-blocks {
-  display: flex;
-  gap: 7px;
-  margin-top: 25px;
-}
-
-.preview-blocks i {
-  width: 50px;
-  height: 22px;
-  border-radius: 4px;
-  background: #1e1e28;
-}
-
-.project-2 .preview-line {
-  background: #22d3ee;
-}
-
-.project-info {
+.service-card h3 {
   position: relative;
-  padding: 28px 30px 32px;
-}
+  z-index: 2;
 
-.project-info > div:first-child > span {
-  color: #73737f;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+  color: #f5f5f7;
 
-.project-info h3 {
-  margin-top: 7px;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 25px;
+
+  font-size: 23px;
+
+  line-height: 1.2;
 }
 
-.project-info p {
-  max-width: 600px;
-  margin-top: 15px;
+.service-card p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 500px;
+
+  margin-top: 14px;
+
   color: #858591;
-  font-size: 13px;
-  line-height: 1.8;
+
+  font-size: 14px;
+
+  line-height: 1.75;
 }
 
-.project-number {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  color: #4b4b55;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-}
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 800px) {
-  .projects-section {
+
+  .services-section {
+    padding: 100px 5%;
+  }
+
+  .section-heading {
+    margin-bottom: 45px;
+  }
+
+  .section-heading h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 500px) {
+
+  .services-section {
     padding: 90px 5%;
   }
 
-  .projects-heading {
-    flex-direction: column;
-    align-items: flex-start;
+  .section-heading h2 {
+    font-size: 38px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 500px) {
-  .project-preview {
-    height: 270px;
-    padding: 20px;
+  .section-heading p {
+    font-size: 14px;
   }
 
-  .preview-browser {
-    width: 100%;
+  .service-card {
+    min-height: 250px;
+
+    padding: 24px;
   }
+
+  .service-card h3 {
+    font-size: 21px;
+  }
+
 }

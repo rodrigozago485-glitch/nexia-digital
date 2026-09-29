@@ -14,121 +14,382 @@
   margin: 0 auto;
 }
 
+/* ========================================
+   CABEÇALHO
+======================================== */
+
 .contact-heading {
   max-width: 800px;
+  margin-bottom: 70px;
 }
 
 .contact-heading > span {
-  color: #a78bfa;
-  font-size: 10px;
-  font-weight: 600;
+  color: #22d3ee;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 4px;
 }
 
 .contact-heading h2 {
-  margin-top: 20px;
+  margin-top: 18px;
+
+  color: #f5f5f7;
+
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(45px, 6vw, 75px);
+
+  font-size: clamp(45px, 6vw, 72px);
   line-height: 0.98;
-  letter-spacing: -4px;
+
+  letter-spacing: -3px;
 }
 
 .contact-heading h2 strong {
   display: block;
+
   background: linear-gradient(
     100deg,
     #ffffff,
-    #a78bfa 55%,
+    #a78bfa,
     #22d3ee
   );
+
   -webkit-background-clip: text;
   background-clip: text;
+
   color: transparent;
 }
 
 .contact-heading p {
-  max-width: 600px;
-  margin-top: 30px;
+  max-width: 620px;
+
+  margin-top: 28px;
+
   color: #858591;
-  font-size: 15px;
+
+  font-size: 16px;
   line-height: 1.8;
 }
 
+/* ========================================
+   CARDS
+======================================== */
+
 .contact-options {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 70px;
+
+  gap: 18px;
 }
 
 .contact-card {
-  min-height: 150px;
-  padding: 30px;
+  position: relative;
+
+  min-height: 180px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.025);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
   transition:
-    transform 250ms ease,
-    border-color 250ms ease,
-    background 250ms ease;
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
 }
 
-.contact-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(139, 92, 246, 0.5);
-  background: rgba(139, 92, 246, 0.06);
+/* ========================================
+   LUZ INTERNA
+======================================== */
+
+.contact-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -120px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(139, 92, 246, 0.10);
+
+  filter: blur(50px);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
 }
+
+.contact-card:hover::after {
+  opacity: 1;
+}
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.contact-card-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* ========================================
+   ÍCONE
+======================================== */
+
+.contact-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* EMAIL */
+
+.contact-card:first-child .contact-icon {
+  color: #38bdf8;
+
+  box-shadow:
+    inset 0 0 20px rgba(56, 189, 248, 0.04);
+}
+
+/* WHATSAPP */
+
+.whatsapp-icon {
+  color: #25d366;
+
+  box-shadow:
+    inset 0 0 20px rgba(37, 211, 102, 0.04);
+}
+
+/* ========================================
+   TEXTOS
+======================================== */
 
 .contact-card span {
-  color: #6f6f7b;
-  font-size: 9px;
-  font-weight: 600;
+  display: block;
+
+  color: #686875;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
   letter-spacing: 3px;
 }
 
 .contact-card h3 {
-  margin-top: 10px;
-  color: white;
+  margin-top: 8px;
+
+  color: #f5f5f7;
+
   font-family: "Space Grotesk", sans-serif;
-  font-size: 20px;
+
+  font-size: 18px;
+
+  font-weight: 500;
 }
 
+/* ========================================
+   SETA
+======================================== */
+
 .contact-card > strong {
+  position: relative;
+
+  z-index: 2;
+
   width: 42px;
   height: 42px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
   border-radius: 50%;
-  color: #a78bfa;
+
+  color: #777782;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.025);
+
   font-size: 18px;
-  transition: 250ms ease;
+
+  font-weight: 400;
+
+  transition:
+    transform 0.4s ease,
+    color 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
 }
+
+/* ========================================
+   HOVER
+======================================== */
+
+.contact-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(167, 139, 250, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139, 92, 246, 0.07),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+.contact-card:hover .contact-icon {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* EMAIL HOVER */
+
+.contact-card:first-child:hover .contact-icon {
+  background: rgba(56, 189, 248, 0.08);
+
+  box-shadow:
+    0 0 30px rgba(56, 189, 248, 0.15);
+}
+
+/* WHATSAPP HOVER */
+
+.contact-card:hover .whatsapp-icon {
+  background: rgba(37, 211, 102, 0.08);
+
+  box-shadow:
+    0 0 30px rgba(37, 211, 102, 0.16);
+}
+
+/* SETA HOVER */
 
 .contact-card:hover > strong {
-  background: #8b5cf6;
-  color: white;
+  transform: translate(3px, -3px);
+
+  color: #ffffff;
+
+  border-color: rgba(167, 139, 250, 0.45);
+
+  background: rgba(139, 92, 246, 0.12);
 }
 
-@media (max-width: 700px) {
-  .contact-section {
-    padding: 100px 5%;
-  }
+/* ========================================
+   TABLET
+======================================== */
 
-  .contact-heading h2 {
-    letter-spacing: -2px;
+@media (max-width: 800px) {
+
+  .contact-section {
+    padding: 110px 5%;
   }
 
   .contact-options {
     grid-template-columns: 1fr;
-    margin-top: 50px;
+  }
+
+}
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 500px) {
+
+  .contact-section {
+    padding: 90px 5%;
+  }
+
+  .contact-heading {
+    margin-bottom: 45px;
+  }
+
+  .contact-heading h2 {
+    font-size: 42px;
+
+    letter-spacing: -2px;
+  }
+
+  .contact-heading p {
+    font-size: 14px;
+  }
+
+  .contact-card {
+    min-height: 150px;
+
+    padding: 22px;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 14px;
   }
 
   .contact-card h3 {
+    font-size: 15px;
+  }
+
+  .contact-card-info {
+    gap: 14px;
+  }
+
+  .contact-card > strong {
+    width: 36px;
+    height: 36px;
+
     font-size: 16px;
   }
+
 }

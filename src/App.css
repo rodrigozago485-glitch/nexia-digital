@@ -537,12 +537,15 @@ a {
     );
 }
 
-.intro-section > span {
-  color: var(--purple-light);
 
-  font-size: 10px;
-  font-weight: 600;
+.intro-section span {
+  display: block;
+  margin-bottom: 20px;
 
+  color: #22d3ee;
+
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 4px;
 }
 
@@ -550,6 +553,8 @@ a {
   max-width: 850px;
 
   margin: 20px auto;
+
+  color: #ffffff;
 
   font-family: "Space Grotesk", sans-serif;
 
@@ -563,7 +568,18 @@ a {
 .intro-section h2 strong {
   display: block;
 
-  color: #777784;
+  margin-top: 10px;
+
+  background: linear-gradient(
+    100deg,
+    #a78bfa,
+    #22d3ee
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
 }
 
 .intro-section p {
@@ -571,11 +587,10 @@ a {
 
   margin: 30px auto 0;
 
-  color: #858591;
+  color: #b8b8c5;
 
   line-height: 1.8;
 }
-
 
 /* RESPONSIVO */
 
